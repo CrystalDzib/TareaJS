@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script language="javascript">
+      alert("¡Hola mundo!");
+    </script>
+    <title>Static Template</title>
+    <style>
+      h1 {
+        color: green;
+      }
+      h2 {
+        font-family: Impact;
+        color: indigo;
+      }
+      body {
+        text-align: center;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bienvenidos a mi primer ejemplo en :</h1>
+    <h2>Java Script</h2>
+    <p>
+      Ejemplo de doble click sobre el botón para mostrar un "mensaje de alerta";
+    </p>
+
+    <button ondblclick="myalert()">
+      Doble click, para mensaje de <br />¡ALERTA!</button
+    ><br />
+
+    <button
+      onclick="document.getElementById('myImage').src='Imagenes/FocoEncendido.png'"
+    >
+      Encendido
+    </button>
+    <img id="myImage" src="Imagenes/focoApagado.jpg" alt="" width="10%"
+    height="10%"" />
+    <button
+      onclick="document.getElementById('myImage').src='Imagenes/focoApagado.jpg'"
+    >
+      Apagado
+    </button>
+
+    <script type="text/javascript">
+      function myalert() {
+        alert("Test\n " + "Mensaje de alerta " + " sobre un botón");
+      }
+
+      function validarSiNumero(num) {
+        if (!/^([0-9])*$/.test(num))
+          alert("¡Error! este valor no es un número \n Es la letra  " + num);
+      }
+
+      function validateMail(idMail) {
+        //Creamos un objeto
+        object = document.getElementById(idMail);
+        valueForm = object.value;
+
+        // Patron para el correo
+        var patron = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+        if (valueForm.search(patron) == 0) {
+          //Mail correcto
+          object.style.color = "#000";
+          return;
+        }
+        //Mail incorrecto
+        object.style.color = "#f00";
+      }
+      //-->
+    </script>
+
+    <p>Validación de una fecha</p>
+    <input
+      type="date"
+      name="fecha"
+      id="numero"
+      value=""
+      class="data"
+      required
+      onKeyUp="javascript:validarSiFecha(this.value)"
+    />
+
+    <p>Validacion de email</p>
+
+    <div class="correo">
+      <input type="text" name="email1" value="" class="data" required />
+      <input
+        type="text"
+        name="email"
+        id="email"
+        value=""
+        class="data"
+        required
+        onKeyUp="javascript:validateMail('email')"
+      />
+      <p>Validación de un número</p>
+      <input
+        type="text"
+        name="numero"
+        id="numero"
+        value=""
+        class="data"
+        required
+        onKeyUp="javascript:validarSiNumero(this.value)"
+      />
+    </div>
+
+    <button
+      onclick="document.getElementById('myImages').src='Imagenes/Hombre.jpg'"
+    >
+      Hombre
+    </button>
+    <img id="myImages" src="Imagenes/Mujer.png" style="width: 100px;" />
+    <button
+      onclick="document.getElementById('myImages').src='Imagenes/Mujer.png'"
+    >
+      Mujer
+    </button>
+    <h1 id="header">Esto es javaScript</h1>
+
+    <script>
+      document.body.appendChild(document.createTextNode("Hola mundo!. Js"));
+
+      var h1 = document.getElementsById("header");
+      h1 = document.getElementsByTagName("h1")[0];
+    </script>
+
+    <noscript>
+      Tu navegador no admite javascript, o javascript esta desabilitado.
+    </noscript>
+  </body>
+</html>
